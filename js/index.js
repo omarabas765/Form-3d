@@ -72,12 +72,15 @@ function addRoomCard(index) {
 
   // تفعيل/إغلاق الكارت عند الضغط على الهيدر
   card.querySelector('.room-card-header').addEventListener('click', function(e) {
-    // إغلاق جميع الكروت الأخرى
-    document.querySelectorAll('.room-card-pro').forEach(c => {
-      if (c !== card) c.classList.remove('active');
-    });
-    // تبديل حالة الكارت الحالي
-    card.classList.toggle('active');
+    e.stopPropagation();
+    if (card.classList.contains('active')) {
+      // إذا كان الكارت مفتوح، أغلقه فقط
+      card.classList.remove('active');
+    } else {
+      // إذا كان مغلق، أغلق جميع الكروت وافتح هذا الكارت فقط
+      document.querySelectorAll('.room-card-pro').forEach(c => c.classList.remove('active'));
+      card.classList.add('active');
+    }
   });
 
   // أزرار التنقل بين الغرف
