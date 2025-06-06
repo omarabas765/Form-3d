@@ -72,9 +72,33 @@
   <div id="bathroomsContainer"></div>
   <div class="step-nav">
     <button type="button" id="addBathroomBtn">➕ إضافة حمام</button>
-    <button type="button" id="toSummaryFromBath">✅ مراجعة البيانات</button>
+    <button type="button" id="toReceptionStepBtn">التالي</button>
+
   </div>
 </section>
+<!-- الخطوة التالية: الريسيبشن والممرات -->
+<section id="receptionStep" class="step">
+  <h2>تفاصيل الريسيبشن والممرات</h2>
+  <label>عدد الأجزاء</label>
+  <input type="number" id="receptionCount" min="1" />
+  <div class="step-nav">
+    <button type="button" onclick="generateReceptionCards()">توليد الأجزاء</button>
+  </div>
+  <div id="receptionContainer"></div>
+  <div class="step-nav">
+    <button type="button" id="toKitchenStepBtn">التالي</button>
+  </div>
+</section>
+<!-- الخطوة التالية: المطبخ -->
+<section id="kitchenStep" class="step">
+  <h2>تفاصيل المطبخ</h2>
+  <div id="kitchenContainer"></div>
+  <div class="step-nav">
+    <button type="button" id="toSummaryFromKitchen">✅ مراجعة البيانات</button>
+  </div>
+</section>
+
+
     <section id="summaryStep" class="step">
       <h2>مراجعة البيانات</h2>
       <pre id="summaryOutput" style="background:#f9f9f9; padding:15px; border-radius:8px; white-space:break-spaces;"></pre>
