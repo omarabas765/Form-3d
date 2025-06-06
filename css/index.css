@@ -1,0 +1,236 @@
+body {
+  font-family: 'Cairo', sans-serif;
+  background: linear-gradient(135deg, #ede7f6, #ffffff);
+  margin: 0;
+  padding: 40px 20px;
+  direction: rtl;
+}
+
+.form-container {
+  max-width: 900px;
+  margin: auto;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+}
+
+h2 {
+  text-align: center;
+  color: #6a1b9a;
+  margin-bottom: 30px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.unit-card {
+  background: #fff;
+  border: 2px solid transparent;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  text-align: center;
+  padding: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.unit-card.selected {
+  border-color: #8e24aa;
+  background: #f3e5f5;
+}
+
+.unit-card h4 {
+  margin-top: 10px;
+  color: #6a1b9a;
+}
+
+model-viewer {
+  width: 100%;
+  height: 140px;
+  border-radius: 10px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-family: 'Cairo', sans-serif;
+}
+
+.unit-option {
+  border: 2px solid #ccc;
+  border-radius: 12px;
+  text-align: center;
+  padding: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  flex: 1;
+}
+
+.unit-option.selected {
+  border-color: #8e24aa;
+  background: #f3e5f5;
+  color: #6a1b9a;
+}
+
+.unit-option img {
+  width: 40px;
+  margin-bottom: 5px;
+}
+
+.options {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 12px 30px;
+  background: #8e24aa;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #6a1b9a;
+}
+
+.step {
+  display: none;
+}
+
+.step.active {
+  display: block;
+}
+
+.step-nav {
+  text-align: center;
+  margin-top: 20px;
+}
+/* تصميم كارت الغرفة بشكل احترافي */
+#roomsContainer {
+    display: flex;
+   flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+.room-card-pro {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(138,43,226,0.08);
+    padding: 0;
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+    border: 1.5px solid #ede7f6;
+}
+.room-card-pro:hover {
+    box-shadow: 0 8px 32px rgba(138,43,226,0.15);
+    border-color: #b39ddb;
+}
+.room-card-header {
+    background:#FFF;
+    color: #047;
+    padding: 16px 20px;
+    font-weight: bold;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1em;
+}
+.room-card-header img {
+    width: 32px;
+    height: 32px;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.08));
+}
+.room-card-body {
+    padding: 20px 15px;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 10px;
+}
+.room-card-body label {
+    color: #6a1b9a;
+    font-size: 0.97em;
+    margin-bottom: 2px;
+}
+.room-card-body input, .room-card-body select {
+    border: 1px solid #d1c4e9;
+    border-radius: 8px;
+    padding: 8px;
+    width: 90%;
+    font-family: inherit;
+    font-size: 1em;
+    background: #faf7fd;
+    margin-bottom: 8px;
+    transition: border 0.2s;
+}
+.room-card-body input:focus, .room-card-body select:focus {
+    border-color: #8e24aa;
+    outline: none;
+}
+
+/* تصميم الكارت الافتراضي */
+.room-card-pro {
+  width: 150px;
+  height: 150px;
+  transition: all 0.3s ease;
+  margin: 10px;
+}
+
+/* عند تفعيل الكارت (مثلاً عند إضافة كلاس active) */
+.room-card-pro.active {
+  width: 100%;
+  height: auto;
+}
+
+.room-card-pro .room-card-body {
+  display: none;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.room-card-pro.active .room-card-body {
+  display: flex;
+}
+#bathroomsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+} 
+.bathroom-card.active {
+  width: 100%;
+  height: auto;
+  z-index: 2;
+  box-shadow: 0 8px 32px rgba(138,43,226,0.15);
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.nav-buttons button {
+  flex: 1;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.nav-buttons button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
